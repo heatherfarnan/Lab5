@@ -56,7 +56,7 @@ def moveSteps(steps, dir):
 #         GPIO.output(pins[pin], dir[halfstep][pin])
 #       delay_us(1000)
 try:
-  moveSteps(1000, 1)
+  moveSteps(100, 1)
 except:
   pass
 GPIO.cleanup() 
