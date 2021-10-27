@@ -32,8 +32,6 @@ def delay_us(tus): # use microseconds to improve time resolution
   while time.time() < endTime:
     pass
 
-dir = 1
-
 def halfstep(dir):
   # dir = +/- 1 (ccw / cw)
   global state
