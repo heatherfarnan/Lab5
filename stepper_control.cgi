@@ -1,6 +1,6 @@
 print('Content-type: text/html\n\n')
 print('<html>')
-print('<form action="/Lab5/stepper_control.cgi" method="POST">')
+print('<form action="/cgi-bin/stepper_control.cgi" method="POST">')
 
 print('  <input type="submit" name="zeroing" value="zeroing"> zero stepper <br><br>')
 
