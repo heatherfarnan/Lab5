@@ -16,7 +16,7 @@ class Stepper:
 
   # def getAngle(self):
   #   return self.#idk
-
+  #need to make this but im gonna try to get zero working first
 
   def zero(self):
     ledPin = 16
@@ -77,11 +77,7 @@ def moveSteps(steps, dir):
 #       for pin in range(4):    # 4 pins that need to be energized
 #         GPIO.output(pins[pin], dir[halfstep][pin])
 #       delay_us(1000)
-try:
-  moveSteps(100, 1)
-except:
-  pass
-GPIO.cleanup() 
+
 
 #further modify this code
 #convert it into a class
