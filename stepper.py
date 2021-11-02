@@ -1,15 +1,35 @@
 from PCF8591 import PCF8591
 
+# class photo:
+
+#   def __init__ (self, address):
+#     self.PCF = PCF8591(address)
+
+#   def readPhoto(self):
+#     return self.PCF.read(0)
+
 class Stepper:
 
   def __init__ (self, address):
     self.PCF = PCF8591(address)
 
-  def getAngle(self):
-    return self.PCF.read(0) #yuh i need fixing
+  # def getAngle(self):
+  #   return self.#idk
+
 
   def zero(self):
-    return self.PCF.read(1) #yuh i need fixing
+    ledPin = 16
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(ledPin, GPIO.OUT)
+
+    ledState = 1
+    GPIO.output(ledPin, ledState)
+
+    photo = self.PCF.read(0)
+    while photo <= 205:
+      moveSteps(1000,1)
+    ledState = 0
+    return self.PCF.read(0) 
 
 import RPi.GPIO as GPIO
 import time
@@ -26,6 +46,7 @@ for pin in pins:
 sequence = [ [1,0,0,0],[1,1,0,0],[0,1,0,0],[0,1,1,0],[0,0,1,0],[0,0,1,1],[0,0,0,1],[1,0,0,1] ]
 
 state = 0 #current position in stator sequence
+photo = 200 #value of photoresistor. tip point point is 205
 
 def delay_us(tus): # use microseconds to improve time resolution
   endTime = time.time() + float(tus)/ float(1E6)
