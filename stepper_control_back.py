@@ -38,7 +38,8 @@ while True:
     print(zero)
 
   if position != 0:
-    n = 512*position/360 
+    n = float(512*position/360) 
+    print(n)
     step.sendAngle(n) 
 
   time.sleep(.5)
