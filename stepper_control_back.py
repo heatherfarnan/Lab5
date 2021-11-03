@@ -36,5 +36,9 @@ while True:
 
     print(zero)
 
-  time.sleep(0.1)
+  if position != 0:
+    n = 512/position
+    step.getAngle(n)
+
+  time.sleep(.5)
 #change

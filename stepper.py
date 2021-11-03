@@ -14,9 +14,15 @@ class Stepper:
   def __init__ (self, address):
     self.PCF = PCF8591(address)
 
-  # def getAngle(self):
-  
-  # Make a full rotation of the output shaft:
+  def getAngle(n):
+    for i in range(512/n): # full revolution (8 cycles/rotation * 64 gear ratio)
+      for halfstep in range(8): # 8 half-steps per cycle
+        for pin in range(4):    # 4 pins that need to be energized
+          GPIO.output(pins[pin], dir[halfstep][pin])
+        delay_us(1000)
+
+
+  # # Make a full rotation of the output shaft:
   # def loop(dir): # dir = rotation direction (cw or ccw)
   #   for i in range(512): # full revolution (8 cycles/rotation * 64 gear ratio)
   #     for halfstep in range(8): # 8 half-steps per cycle
@@ -24,7 +30,7 @@ class Stepper:
   #         GPIO.output(pins[pin], dir[halfstep][pin])
   #       delay_us(1000)
 
-    # return self.#idk
+  #   # return self.#idk
 
   def zero(self):
     ledPin = 16
