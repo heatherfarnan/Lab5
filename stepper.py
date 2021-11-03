@@ -28,6 +28,7 @@ class Stepper:
 
   def zero(self):
     ledPin = 16
+    print(ledPin)
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(ledPin, GPIO.OUT)
 
