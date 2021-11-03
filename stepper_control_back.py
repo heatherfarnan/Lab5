@@ -24,18 +24,13 @@ while True:
     zero = str(values['zeroing'])
   f.close()
 
-
-  print("i've gotten this far in this code 2 {}".format(zero))
-
   if "zero" in zero:
     step.zero() 
-    print("zero attemptted {}".format(position))
 
     with open("Lab5.txt", 'w') as h:
       h.write('''{"slider1":"0", "zeroing":"0"}''')
     h.close()
 
-    print(zero)
 
   if position != 0:
     n = float(512*position/360) 

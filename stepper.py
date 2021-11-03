@@ -34,7 +34,6 @@ class Stepper:
 
   def zero(self):
     ledPin = 16
-    print(ledPin)
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(ledPin, GPIO.OUT)
 
@@ -42,10 +41,8 @@ class Stepper:
     GPIO.output(ledPin, ledState)
 
     photo = self.PCF.read(0)
-    print(photo)
     while photo <= 205:
       photo = self.PCF.read(0)
-      print(photo)
       moveSteps(1,1)
     ledState = 0
     return self.PCF.read(0) 
