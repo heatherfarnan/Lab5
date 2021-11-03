@@ -22,7 +22,7 @@ class Stepper:
   #       delay_us(1000)
 
   def goAngle(self, n):
-    moveSteps(25,1)
+    moveSteps(200,1)
 
 
 
@@ -40,7 +40,9 @@ class Stepper:
     while photo <= 205:
       photo = self.PCF.read(0)
       moveSteps(1,1)
-    GPIO.output(ledPin, 0)
+
+    ledState = 0   
+    GPIO.output(ledPin, ledState)
 
 import RPi.GPIO as GPIO
 import time
