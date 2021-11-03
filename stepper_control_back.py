@@ -33,7 +33,7 @@ while True:
 
 
   if position != 0:
-    n = float(512*position/360) 
+    n = int(512*position/360) 
     print('n = %f' %n)
     step.goAngle(n) 
 
