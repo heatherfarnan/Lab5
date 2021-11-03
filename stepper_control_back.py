@@ -1,8 +1,5 @@
 #!/usr/bin/python37all
 
-# This code runs continually in the background to apply
-# the stored PWM slider value to the GPIO output
-
 import RPi.GPIO as GPIO
 import time
 
@@ -17,8 +14,7 @@ GPIO.setup(ledPin, GPIO.OUT)
 
 import json
 
-# with open("test.txt", 'w') as o:
-#   o.write("i've gotten this far in this code")
+print("i've gotten this far in this code 1")
 
 while True:
   with open("Lab5.txt", 'r') as f:
@@ -27,13 +23,10 @@ while True:
     zero = str(values['zeroing'])
 
 
-  print("i've gotten this far in this code heyo {}".format(zero))
+  print("i've gotten this far in this code 2 {}".format(zero))
 
   if "zero" in zero:
     step.zero() 
-
-
-#  <input type="submit" name="zeroing" value="zero stepper"> <br><br>
 
   time.sleep(0.1)
 #change

@@ -1,8 +1,15 @@
 <html>
 
 <form action="/cgi-bin/stepper_control.cgi" method="POST">
-  <input type="submit" name="zeroing" value="zero stepper"> <br><br>
+  <input type="hidden" name="reset" value="1">
+  <input type="hidden" name="slider1" value="0">
+  <input type="submit" name="zeroing" value="zero stepper"> 
+</form>
 
+<br>
+
+<form action="/cgi-bin/stepper_control.cgi" method="POST">
+  <input type="hidden" name="reset" value="0"
   <input type="range" name="slider1" min ="0" max="360" value ="0"><br>
   <input type="submit" value="apply stepper angle"> 
 
