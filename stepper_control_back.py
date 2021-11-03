@@ -30,7 +30,7 @@ while True:
   with open("Lab5.txt", 'w') as o:
     o.write("i've gotten this far in this code heyo {}".format(position))
 
-  if "zeroing" in zero:
+  if "zero" in zero:
     step.zero()
 
 
