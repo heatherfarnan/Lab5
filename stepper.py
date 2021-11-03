@@ -22,13 +22,7 @@ class Stepper:
         delay_us(1000)
 
 
-  # # Make a full rotation of the output shaft:
-  # def loop(dir): # dir = rotation direction (cw or ccw)
-  #   for i in range(512): # full revolution (8 cycles/rotation * 64 gear ratio)
-  #     for halfstep in range(8): # 8 half-steps per cycle
-  #       for pin in range(4):    # 4 pins that need to be energized
-  #         GPIO.output(pins[pin], dir[halfstep][pin])
-  #       delay_us(1000)
+
 
   #   # return self.#idk
 
@@ -84,6 +78,14 @@ def moveSteps(steps, dir):
   #move the actuation sequence a given number of half steps
   for step in range(steps):
     halfstep(dir)
+
+  # Make a full rotation of the output shaft:
+def loop(dir): # dir = rotation direction (cw or ccw)
+  for i in range(512): # full revolution (8 cycles/rotation * 64 gear ratio)
+    for halfstep in range(8): # 8 half-steps per cycle
+      for pin in range(4):    # 4 pins that need to be energized
+        GPIO.output(pins[pin], dir[halfstep][pin])
+      delay_us(1000)
 
 
 #further modify this code
