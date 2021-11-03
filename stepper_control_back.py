@@ -37,7 +37,7 @@ while True:
     print(zero)
 
   if position != 0:
-    n = 512/position
+    n = 512*position/360
     step.getAngle(n)
 
   time.sleep(.5)

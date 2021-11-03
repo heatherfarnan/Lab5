@@ -15,7 +15,7 @@ class Stepper:
     self.PCF = PCF8591(address)
 
   def getAngle(n):
-    for i in range(512/n): # full revolution (8 cycles/rotation * 64 gear ratio)
+    for i in range(n): # full revolution (8 cycles/rotation * 64 gear ratio)
       for halfstep in range(8): # 8 half-steps per cycle
         for pin in range(4):    # 4 pins that need to be energized
           GPIO.output(pins[pin], dir[halfstep][pin])
