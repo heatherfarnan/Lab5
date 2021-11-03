@@ -21,13 +21,13 @@ import json
 #   o.write("i've gotten this far in this code")
 
 while True:
-  with open("lab5.txt", 'r') as f:
+  with open("Lab5.txt", 'r') as f:
     values = json.load(f)
     position = float(values['slider1']) #f.read()) # read duty cycle value from file
     zero = str(values['zeroing'])
 
-  with open("Lab5.txt", 'w') as o:
-    o.write("i've gotten this far in this code heyo {}".format(zero))
+
+  print("i've gotten this far in this code heyo {}".format(zero))
 
   if "zero" in zero:
     step.zero() 
