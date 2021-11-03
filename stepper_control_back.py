@@ -27,6 +27,7 @@ while True:
 
   if "zero" in zero:
     step.zero() 
+    print("zero attemptted")
 
   time.sleep(0.1)
 #change

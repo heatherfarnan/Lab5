@@ -12,7 +12,7 @@ b1 = datain.getvalue('zeroing')
 data = {'slider1':s1, 'zeroing':b1}
 
 with open("Lab5.txt", 'w') as f:
-  json.dump(data,f)`
+  json.dump(data,f)
 
 print('Content-type: text/html\n\n')
 print('<html>')
