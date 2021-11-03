@@ -37,5 +37,10 @@ while True:
     print('n = %f' %n)
     step.goAngle(n) 
 
+    with open("Lab5.txt", 'w') as g:
+      g.write('''{"slider1":"0", "zeroing":"0"}''')
+    g.close()
+
+
   time.sleep(.5)
 #change

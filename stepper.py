@@ -40,9 +40,7 @@ class Stepper:
     while photo <= 205:
       photo = self.PCF.read(0)
       moveSteps(1,1)
-    ledState = 0
-    GPIO.output(ledPin, ledState)
-    return self.PCF.read(0) 
+    GPIO.output(ledPin, 0)
 
 import RPi.GPIO as GPIO
 import time
