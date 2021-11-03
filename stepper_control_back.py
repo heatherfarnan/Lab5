@@ -31,7 +31,7 @@ while True:
     print("zero attemptted {}".format(position))
 
     with open("Lab5.txt", 'w') as h:
-      h.write('''{'slider1':"0", 'zeroing':"0"}''')
+      h.write('''{"slider1":"0", "zeroing":"0"}''')
     h.close()
 
     print(zero)
