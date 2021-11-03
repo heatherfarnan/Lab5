@@ -22,7 +22,7 @@ class Stepper:
   #       delay_us(1000)
 
   def goAngle(self, n):
-    moveSteps(200,1)
+    moveSteps(500,1)
 
 
 
