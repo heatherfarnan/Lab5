@@ -15,8 +15,16 @@ class Stepper:
     self.PCF = PCF8591(address)
 
   # def getAngle(self):
-  #   return self.#idk
-  #need to make this but im gonna try to get zero working first
+  
+  # Make a full rotation of the output shaft:
+  # def loop(dir): # dir = rotation direction (cw or ccw)
+  #   for i in range(512): # full revolution (8 cycles/rotation * 64 gear ratio)
+  #     for halfstep in range(8): # 8 half-steps per cycle
+  #       for pin in range(4):    # 4 pins that need to be energized
+  #         GPIO.output(pins[pin], dir[halfstep][pin])
+  #       delay_us(1000)
+
+    # return self.#idk
 
   def zero(self):
     ledPin = 16
@@ -47,7 +55,7 @@ for pin in pins:
 sequence = [ [1,0,0,0],[1,1,0,0],[0,1,0,0],[0,1,1,0],[0,0,1,0],[0,0,1,1],[0,0,0,1],[1,0,0,1] ]
 
 state = 0 #current position in stator sequence
-photo = 200 #value of photoresistor. tip point point is 205
+# photo = 200 #value of photoresistor. tip point point is 205
 
 def delay_us(tus): # use microseconds to improve time resolution
   endTime = time.time() + float(tus)/ float(1E6)
@@ -69,14 +77,6 @@ def moveSteps(steps, dir):
   #move the actuation sequence a given number of half steps
   for step in steps:
     halfstep(dir)
-
-# # Make a full rotation of the output shaft:
-# def loop(dir): # dir = rotation direction (cw or ccw)
-#   for i in range(512): # full revolution (8 cycles/rotation * 64 gear ratio)
-#     for halfstep in range(8): # 8 half-steps per cycle
-#       for pin in range(4):    # 4 pins that need to be energized
-#         GPIO.output(pins[pin], dir[halfstep][pin])
-#       delay_us(1000)
 
 
 #further modify this code

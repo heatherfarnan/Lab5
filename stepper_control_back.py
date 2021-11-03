@@ -24,14 +24,13 @@ while True:
   with open("lab5.txt", 'r') as f:
     values = json.load(f)
     position = float(values['slider1']) #f.read()) # read duty cycle value from file
-    #speed = float(values['option']) !! do i need this?
     zero = str(values['zeroing'])
 
-  with open("Lab5.txt", 'w') as o:
-    o.write("i've gotten this far in this code heyo {}".format(position))
+  # with open("Lab5.txt", 'w') as o:
+  #   o.write("i've gotten this far in this code heyo {}".format(position))
 
   if "zero" in zero:
-    step.zero()
+    step.zero() 
 
 
 #  <input type="submit" name="zeroing" value="zero stepper"> <br><br>
