@@ -34,8 +34,8 @@ while True:
 
   if position != 0:
     n = float(512*position/360) 
-    print(n)
-    step.sendAngle(n) 
+    print('n = %f' %n)
+    step.goAngle(n) 
 
   time.sleep(.5)
 #change
