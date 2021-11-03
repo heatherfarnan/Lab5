@@ -36,7 +36,9 @@ class Stepper:
 
     photo = self.PCF.read(0)
     while photo >= 205:
-      moveSteps(1000,1)
+      photo = self.PCF.read(0)
+      print(photo)
+      moveSteps(1,1)
     ledState = 0
     return self.PCF.read(0) 
 
