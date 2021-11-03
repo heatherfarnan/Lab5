@@ -14,7 +14,7 @@ class Stepper:
   def __init__ (self, address):
     self.PCF = PCF8591(address)
 
-  def goAngle(n):
+  def goAngle(self, n):
     for i in range(n): # full revolution (8 cycles/rotation * 64 gear ratio)
       for halfstep in range(8): # 8 half-steps per cycle
         for pin in range(4):    # 4 pins that need to be energized
