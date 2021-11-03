@@ -36,6 +36,7 @@ class Stepper:
     GPIO.output(ledPin, ledState)
 
     photo = self.PCF.read(0)
+    print(photo)
     while photo <= 205:
       photo = self.PCF.read(0)
       print(photo)
