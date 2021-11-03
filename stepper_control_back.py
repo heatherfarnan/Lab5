@@ -21,6 +21,7 @@ while True:
     values = json.load(f)
     position = float(values['slider1']) #f.read()) # read duty cycle value from file
     zero = str(values['zeroing'])
+  f.close()
 
 
   print("i've gotten this far in this code 2 {}".format(zero))
@@ -28,7 +29,11 @@ while True:
   if "zero" in zero:
     step.zero() 
     print("zero attemptted {}".format(position))
-    zero = 0
+
+    with open("Lab5.txt", 'w') as h:
+      h.write({'slider1':0, 'zeroing':0})
+    h.close()
+
     print(zero)
 
   time.sleep(0.1)
