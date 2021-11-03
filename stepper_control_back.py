@@ -17,6 +17,7 @@ import json
 print("i've gotten this far in this code 1")
 
 while True:
+  position = 0
   with open("Lab5.txt", 'r') as f:
     values = json.load(f)
     position = float(values['slider1']) #f.read()) # read duty cycle value from file
@@ -37,8 +38,8 @@ while True:
     print(zero)
 
   if position != 0:
-    n = 512*position/360
-    step.getAngle(n)
+    n = 512*position/360 
+    step.sendAngle(n) 
 
   time.sleep(.5)
 #change
